@@ -1,0 +1,57 @@
+.amchart {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#nm-graph-amchart {
+  width: 100%;
+  height: 500px;
+}
+
+#legend {
+  width: 250px;
+  height: 100%;
+  margin-left: 10px;
+  float: left;
+}
+
+.amchart .legend-item {
+  list-style: none;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.amchart .legend-item-top,
+.amchart .legend-item-bottom {
+  display: flex;
+}
+
+.amchart .legend-item-top {
+  align-items: flex-end;
+}
+
+.amchart .legend-item-percent {
+  font: 700 3rem/1 Bison, cursive;
+  margin-right: 5px;
+}
+.amchart .legend-item-percent.item-percent-1 {
+  -webkit-text-stroke: 0.5px #000;
+}
+
+.amchart .legend-item-emission {
+  font: 700 1.5rem/1 Bison, cursive;
+  margin-bottom: 3px;
+}
+
+.amchart .legend-item-source p {
+  font: 300 0.75rem/1.25 "Epilogue", sans-serif;
+}
+
+.amchart .items-sum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
