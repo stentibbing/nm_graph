@@ -9,7 +9,7 @@
  * Plugin Name:       Nordic Milk Graph
  * Plugin URI:        https://www.taifuun.ee
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Taifuun OÜ
  * Author URI:        https://www.taifuun.ee
  * License:           GPL-2.0+
@@ -27,7 +27,7 @@ if (! defined('WPINC')) {
 /**
  * Currently plugin version.
  */
-define('NM_GRAPH_VERSION', '1.0.2');
+define('NM_GRAPH_VERSION', '1.0.3');
 
 /**
  * The code that runs during plugin activation.
