@@ -3,10 +3,10 @@ window.addEventListener("load", () => {
   am4core.useTheme(am4themes_animated);
 
   // Create chart instance
-  var chart = am4core.create("nm-graph-amchart", am4charts.PieChart);
+  const chart = am4core.create("nm-graph-amchart", am4charts.PieChart);
 
   // Configure chart
-  chart.innerRadius = am4core.percent(65);
+  chart.innerRadius = am4core.percent(60);
 
   // Add data
   chart.data = [
@@ -14,19 +14,16 @@ window.addEventListener("load", () => {
       source: "Direct emissions from our own activites",
       emissions: 2962,
       color: am4core.color("#2DC850"),
-      stroke: am4core.color("#2DC850"),
     },
     {
       source: "Indirect emissions from energy usage",
       emissions: 18775,
-      color: am4core.color("#FFFFFF"),
-      stroke: am4core.color("#000000"),
+      color: am4core.color("#cccccc"),
     },
     {
       source: "Indirect actions form our value-chain.",
       emissions: 260811,
       color: am4core.color("#000000"),
-      stroke: am4core.color("#000000"),
     },
   ];
 
@@ -39,7 +36,24 @@ window.addEventListener("load", () => {
   pieSeries.slices.template.tooltipText = "";
   pieSeries.ticks.template.disabled = true;
   pieSeries.labels.template.disabled = true;
-  pieSeries.hiddenState.properties.endAngle = -90;
+  pieSeries.slices.template.hiddenState.properties.shiftRadius = 1;
+  pieSeries.slices.template.showOnInit = true;
+
+  pieSeries.slices.template.events.on("over", function (ev) {
+    document
+      .querySelector(
+        '.legend-item[data-item-id="' + ev.target.dataItem.index + '"]'
+      )
+      .classList.add("active-slice");
+  });
+
+  pieSeries.slices.template.events.on("out", function (ev) {
+    document
+      .querySelector(
+        '.legend-item[data-item-id="' + ev.target.dataItem.index + '"]'
+      )
+      .classList.remove("active-slice");
+  });
 
   chart.events.on("ready", function (event) {
     let dataItemsSum = 0;
@@ -92,17 +106,17 @@ window.addEventListener("load", () => {
     label.fontSize = 48;
 
     function hoverSlice(item) {
-      var slice = pieSeries.slices.getIndex(item);
+      let slice = pieSeries.slices.getIndex(item);
       slice.isHover = true;
     }
 
     function blurSlice(item) {
-      var slice = pieSeries.slices.getIndex(item);
+      let slice = pieSeries.slices.getIndex(item);
       slice.isHover = false;
     }
 
     function toggleSlice(item) {
-      var slice = pieSeries.slices.getIndex(item);
+      let slice = pieSeries.slices.getIndex(item);
       slice.isActive = !slice.isActive;
     }
 

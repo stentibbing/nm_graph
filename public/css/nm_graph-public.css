@@ -36,9 +36,6 @@
   font: 700 3rem/1 Bison, cursive;
   margin-right: 5px;
 }
-.amchart .legend-item-percent.item-percent-1 {
-  -webkit-text-stroke: 0.5px #000;
-}
 
 .amchart .legend-item-emission {
   font: 700 1.5rem/1 Bison, cursive;
@@ -47,6 +44,10 @@
 
 .amchart .legend-item-source p {
   font: 300 0.75rem/1.25 "Epilogue", sans-serif;
+}
+
+.amchart .legend-item.active-slice .legend-item-source p {
+  font-weight: 700;
 }
 
 .amchart .items-sum {
