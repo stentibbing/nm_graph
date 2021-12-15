@@ -11,16 +11,26 @@
 }
 
 #legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 250px;
   height: 100%;
-  margin-left: 10px;
+  margin: 0;
+  padding: 0 0 0 20px;  
   float: left;
 }
 
 .amchart .legend-item {
   list-style: none;
   margin-bottom: 25px;
+  padding-right: 15px;
   cursor: pointer;
+  height: 110px;
+}
+
+.amchart .legend-item:last-child {
+  margin-bottom: 0;
 }
 
 .amchart .legend-item-top,
@@ -35,19 +45,33 @@
 .amchart .legend-item-percent {
   font: 700 3rem/1 Bison, cursive;
   margin-right: 5px;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.amchart .legend-item.active-slice .legend-item-percent {
+  font-size: 3.2rem;
+  transition: font-size 0.5s ease-in-out;
 }
 
 .amchart .legend-item-emission {
   font: 700 1.5rem/1 Bison, cursive;
   margin-bottom: 3px;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.amchart .legend-item.active-slice .legend-item-emission {
+  font-size: 1.6rem;
+  transition: font-size 0.5s ease-in-out;
 }
 
 .amchart .legend-item-source p {
   font: 300 0.75rem/1.25 "Epilogue", sans-serif;
+  transition: font-size 0.5s ease-in-out;
 }
 
 .amchart .legend-item.active-slice .legend-item-source p {
-  font-weight: 700;
+  font-size: 0.80rem;
+  transition: font-size 0.5s ease-in-out;
 }
 
 .amchart .items-sum {
